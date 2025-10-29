@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v4
 
       # Build the site
-      - run: npx -y @marp-team/marp-cli@4.2.3 --theme-set marpessa.css README.md -o index.html
+      - run: npx -y @marp-team/marp-cli@4.2.3 --theme-set marpessa.css --html README.md -o index.html
 
       # Upload a specific page to GitHub Pages. Defaults to _site
       - uses: actions/upload-pages-artifact@v3
