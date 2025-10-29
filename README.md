@@ -57,26 +57,14 @@ marp --theme-set marpessa.css --html slides.md -o index.html
 
 ## Here are some fonts that go well with Marpessa
 
-```css
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3");
-:root {
-  font-family: "Source Sans 3", sans-serif;
-}
+Marpessa uses [Fira Sans](https://fonts.google.com/specimen/Fira+Sans) by default. [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3), [Open Sans](https://fonts.google.com/specimen/Open+Sans), [Roboto](https://fonts.google.com/specimen/Fira+Sans), [Inter](https://fonts.google.com/specimen/Inter), ... all work well.
 
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans");
-:root {
-  font-family: "Fira Sans", sans-serif;
-}
+Add this to your YAML frontmatter to use Source Sans 3:
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
-:root {
-  font-family: "Open Sans", sans-serif;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto");
-:root {
-  font-family: "Roboto", sans-serif;
-}
+```yaml
+style: |
+  @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3");
+  :root { font-family: "Source Sans 3", sans-serif; }
 ```
 
 ---
@@ -89,6 +77,7 @@ marp --theme-set marpessa.css --html slides.md -o index.html
 
 - [Multi-column with `_class: columns`](#multi-column-with-_class-columns)
 - [Centered slides with `_class: title`](#centered-slides-with-_class-title)
+- [Smaller fonts with `_class: small`](#smaller-fonts-with-_class-small)
 - [`Use <header>` and `<footer>`](#use-header-and-footer)
 
 </div>
@@ -179,6 +168,21 @@ To center slides vertically (e.g. title slides), use:
 
 ---
 
+# Smaller fonts with `_class: small`
+
+Add `<!-- _class: small -->` to the YAML frontmatter for smaller fonts. Use `small-1`, `small-2`, and `small-3` for progressively smaller font sizes.
+
+This affects slide contents, not headings. Applying multiple times **cumulates** the effect.
+
+You can also apply them to specific elements. for example:
+
+- <span class="small">`.small` has a slightly smaller font size. <span class="small">This is small inside small.</span></span>
+- <span class="small-1">`.small-1` has an even smaller font size. <span class="small-1">This is small-1 inside small.</span></span>
+- <span class="small-2">`.small-2` has an even smaller font size. <span class="small-2">This is small-2 inside small-2.</span></span>
+- <span class="small-3">`.small-3` has an even smaller font size. <span class="small-2">This is small-2 inside small-3.</span></span>
+
+---
+
 # Use `<header>` and `<footer>`
 
 Elements in the header and footer are evenly spaced in the top and bottom of the slide respectively. For example, add this to your YAML frontmatter:
@@ -228,6 +232,35 @@ let x = f("x", 2);
 | three | 3      |
 
 </div>
+
+---
+
+<!-- _class: columns -->
+
+# Edit themes by setting these CSS variables
+
+```
+--bg: #f5f1ed;
+--fg: #3d3935;
+--muted: #8a7d73;
+--border: #ccc0b3;
+--heading: #8b6f47;
+--heading-secondary: #6b5d52;
+--accent: #b17a50;
+--link: #b17a50;
+--link-hover: #8b6f47;
+```
+
+```
+--code-bg: #1f1b17;
+--code-fg: #f7f1e8;
+--quote-bg: #f9f5f1;
+--quote-border: #d4a574;
+--table-header-bg: #d4a574;
+--table-header-fg: #ffffff;
+--table-row-stripe: #faf7f4;
+--mark-bg: #f9e5c8;
+```
 
 ---
 

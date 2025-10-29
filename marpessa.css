@@ -294,6 +294,19 @@ section.title {
   place-content: center;
 }
 
+.small, section.small > :not(:is(h1, h2, h3, h4, h5, h6)) {
+  font-size: 92.5%;
+}
+.small-1, section.small-1 > :not(:is(h1, h2, h3, h4, h5, h6)) {
+  font-size: 85.6%;
+}
+.small-2, section.small-2 > :not(:is(h1, h2, h3, h4, h5, h6)) {
+  font-size: 79.1%;
+}
+.small-3, section.small-3 > :not(:is(h1, h2, h3, h4, h5, h6)) {
+  font-size: 72.2%;
+}
+
 /* ==================== THEME OVERLAYS ==================== */
 
 /* Seafoam Clarity - Fresh aqua-green for tech/wellness */
