@@ -5,11 +5,8 @@ author: Anand S
 url: https://sanand0.github.io/marpessa/
 paginate: true
 theme: marpessa
-header: <div></div><div><a href="https://sanand0.github.io/marpessa/">Marpessa</a></div>
-footer: |
-  <a href="https://sanand0.github.io/marpessa/" target="_blank">
-    <img src="https://cdn.jsdelivr.net/npm/super-tiny-icons/images/svg/github.svg" style="width:32px; height:32px; border-radius: 100%;" />
-  </a>
+header: '<a style="color: var(--bg); background-color: var(--heading); width: 100%;" href="https://sanand0.github.io/marpessa/">Marpessa</a><span style="color: var(--bg); background-color: var(--link); width: 100%;">A Marp Theme</span>'
+footer: '<a href="https://sanand0.github.io/marpessa/" target="_blank" style="justify-content: flex-start;"><img src="https://cdn.jsdelivr.net/npm/super-tiny-icons/images/svg/github.svg" style="width:36px; height:36px; border-radius: 100%;" /></a>'
 
 # Generate via:
 # npx -y @marp-team/marp-cli@latest --theme-set marpessa.css --html README.md -o index.html
@@ -28,7 +25,11 @@ footer: |
 
 </div>
 
+<div style="margin-top: 20px; text-align: end;">
+
 ![h:620px](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Idas_and_Marpessa%2C_A_Book_of_Myths.jpg/500px-Idas_and_Marpessa%2C_A_Book_of_Myths.jpg)
+
+</div>
 
 ---
 
@@ -134,13 +135,13 @@ So, if you have two elements below the heading, you will have two columns. They 
 
 You can use a `<div class="columns">` to create a multi-column layout, like below.
 
-<div class="columns">
+<div class="columns" style="background-color: var(--heading); color: var(--bg);">
 
 The first child of `.columns` forms the first column.
 
 The second child becomes part of the second column.
 
-> You can add as many columns as you want.
+You can add as many columns as you want.
 
 ```markdown
 Of any type.
@@ -152,6 +153,34 @@ height.
 </div>
 
 Content outside the `.columns` div will span the full width of the slide.
+
+---
+
+# ... and `<div class="columns-justify">`
+
+You can use a `<div class="columns-justify">` to create a multi-column layout, like below.
+
+<style scoped>
+  .columns-justify > * {
+    border: 1px solid white;
+  }
+</style>
+
+<div class="columns-justify" style="background-color: var(--heading); color: var(--bg);">
+
+The first element is left aligned.
+
+Inner elements are centered
+
+... no matter how many there are.
+
+The last element is right aligned.
+
+</div>
+
+Content outside the `.columns-justify` div will span the full width of the slide.
+
+`header` and `footer` use this layout by default.
 
 ---
 

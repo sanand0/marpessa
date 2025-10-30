@@ -38,6 +38,12 @@ section {
   --mark-bg: #f9e5c8;
 
   --x-padding: 30px;
+  --y-padding: 5px;
+  --column-x-padding: 20px;
+  --small-0: 92.5%;
+  --small-1: 85.6%;
+  --small-2: 79.1%;
+  --small-3: 72.2%;
 }
 
 /* Sets slide size, spacing, base typography and tries to position content. */
@@ -56,30 +62,27 @@ section {
   place-content: start;
 }
 
-/* Style page number, header and footer */
+/* Style and position page number, header and footer */
 section::after,
 header,
 footer {
   margin: 0;
-  padding: 7.5px var(--x-padding);
+  padding: 0;
   position: absolute;
-  font-size: 24px;
+  font-size: var(--small-1);
   color: var(--muted);
-  z-index: 1;
-}
-
-/* Pin header to top, footer to bottom, page number to bottom-right. */
-header, footer {
-  display: flex;
-  justify-content: space-between;
-  left: 0;
-  width: 100%;
 }
 
 section::after {
   right: 0;
   bottom: 0;
   pointer-events: none;
+  padding: var(--y-padding) var(--x-padding);
+}
+
+header, footer {
+  width: 100%;
+  left: 0;
 }
 
 header {
@@ -90,6 +93,7 @@ footer {
   bottom: 0;
 }
 
+/* Muted text for less important content like captions and footnotes. */
 small, figcaption, .footnote {
   color: var(--muted);
   font-size: 0.85em;
@@ -265,29 +269,69 @@ td, th {
 /* ==================== LAYOUTS ==================== */
 
 /* Columns: heading on top, rest split equally in one row */
-section.columns, .columns {
+header, footer, section.columns, .columns, .columns-justify {
   display: flex;
   flex-wrap: wrap; /* lets the first row be just headers */
   align-items: stretch;
-  gap: var(--col-gap, 24px);
   min-height: 0; /* (Nice to have) Constrain very tall content */
 }
 
 /* Any heading spans full width at the top (in document order) */
 section.columns > :is(h1, h2, h3, h4, h5, h6),
-.columns > :is(h1, h2, h3, h4, h5, h6) {
+.columns > :is(h1, h2, h3, h4, h5, h6),
+.columns-justify > :is(h1, h2, h3, h4, h5, h6) {
   flex: 0 0 100%;
 }
 
+/* Hack to prevent margin collapse due to rounding */
+section.columns {
+  column-gap: var(--col-gap, 24px);
+}
+
 /* All other direct children become equal-width columns */
+header > *,
+footer > *,
 section.columns > :not(:is(h1, h2, h3, h4, h5, h6)),
-.columns > :not(:is(h1, h2, h3, h4, h5, h6)) {
+.columns > :not(:is(h1, h2, h3, h4, h5, h6)),
+.columns-justify > :not(:is(h1, h2, h3, h4, h5, h6)) {
   flex: 1 1 0; /* equal widths */
   min-width: 0; /* prevent overflow */
 }
 
-section.columns > *, .columns > * {
+header > *,
+footer > *,
+section.columns > *,
+.columns > *,
+.columns-justify > * {
   min-height: 0;
+}
+
+header > *, footer > *, .columns > *, .columns-justify > * {
+  padding: var(--y-padding) var(--column-x-padding);
+  margin: 0;
+}
+
+/* header, footer and the utility .columns-justify evenly split child columns.
+  Contents of the first and last children are left and right aligned.
+  Rest are centered. */
+header, footer, .columns-justify {
+  > * {
+    display: flex; /* center content inside each cell */
+    justify-content: center; /* default: centered */
+    text-align: center;
+  }
+  > :first-child {
+    justify-content: flex-start;
+    text-align: start;
+  }
+  > :last-child {
+    justify-content: flex-end;
+    text-align: end;
+  }
+  > :only-child {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 section.title {
@@ -295,16 +339,16 @@ section.title {
 }
 
 .small, section.small > :not(:is(h1, h2, h3, h4, h5, h6)) {
-  font-size: 92.5%;
+  font-size: var(--small-0);
 }
 .small-1, section.small-1 > :not(:is(h1, h2, h3, h4, h5, h6)) {
-  font-size: 85.6%;
+  font-size: var(--small-1);
 }
 .small-2, section.small-2 > :not(:is(h1, h2, h3, h4, h5, h6)) {
-  font-size: 79.1%;
+  font-size: var(--small-2);
 }
 .small-3, section.small-3 > :not(:is(h1, h2, h3, h4, h5, h6)) {
-  font-size: 72.2%;
+  font-size: var(--small-3);
 }
 
 transcript {
