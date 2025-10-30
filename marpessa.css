@@ -307,6 +307,10 @@ section.title {
   font-size: 72.2%;
 }
 
+transcript {
+  display: none;
+}
+
 /* ==================== THEME OVERLAYS ==================== */
 
 /* Seafoam Clarity - Fresh aqua-green for tech/wellness */

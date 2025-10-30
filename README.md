@@ -78,7 +78,8 @@ style: |
 - [Multi-column with `_class: columns`](#multi-column-with-_class-columns)
 - [Centered slides with `_class: title`](#centered-slides-with-_class-title)
 - [Smaller fonts with `_class: small`](#smaller-fonts-with-_class-small)
-- [`Use <header>` and `<footer>`](#use-header-and-footer)
+- [Use `<header>` and `<footer>`](#use-header-and-footer)
+- [Use `<transcript>`](#use-transcript)
 
 </div>
 
@@ -197,6 +198,22 @@ footer: |
   <div>Bottom middle</div>
   <div>Bottom right</div>
 ```
+
+---
+
+# Use `<transcript>`
+
+Anything inside `<transcript>` will be not shown on the slide, but will be visible on other Markdown converters.
+
+Useful to show content like transcripts, references, or notes that you don't want on the slides, but should be visible on other Markdown renderers like GitHub.
+
+For example, the section below is visible on GitHub not on the slides.
+
+<transcript>
+
+This transcript will be visible on GitHub, but not on the slides.
+
+</transcript>
 
 ---
 
