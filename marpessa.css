@@ -355,6 +355,222 @@ transcript {
   display: none;
 }
 
+/* Split layout: 50/50 two-column layout (alternative to equal columns) */
+section.split, .split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--col-gap, 24px);
+}
+
+section.split > :is(h1, h2, h3, h4, h5, h6),
+.split > :is(h1, h2, h3, h4, h5, h6) {
+  flex: 0 0 100%;
+}
+
+section.split > :not(:is(h1, h2, h3, h4, h5, h6)),
+.split > :not(:is(h1, h2, h3, h4, h5, h6)) {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Sidebar layout: 1/3 sidebar + 2/3 main content */
+section.sidebar, .sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--col-gap, 24px);
+}
+
+section.sidebar > :is(h1, h2, h3, h4, h5, h6),
+.sidebar > :is(h1, h2, h3, h4, h5, h6) {
+  flex: 0 0 100%;
+}
+
+section.sidebar > :not(:is(h1, h2, h3, h4, h5, h6)):first-of-type,
+.sidebar > :not(:is(h1, h2, h3, h4, h5, h6)):first-of-type {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+section.sidebar > :not(:is(h1, h2, h3, h4, h5, h6)):last-child,
+.sidebar > :not(:is(h1, h2, h3, h4, h5, h6)):last-child {
+  flex: 2 1 0;
+  min-width: 0;
+}
+
+/* Reverse sidebar: 2/3 main content + 1/3 sidebar */
+section.sidebar-right, .sidebar-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--col-gap, 24px);
+}
+
+section.sidebar-right > :is(h1, h2, h3, h4, h5, h6),
+.sidebar-right > :is(h1, h2, h3, h4, h5, h6) {
+  flex: 0 0 100%;
+}
+
+section.sidebar-right > :not(:is(h1, h2, h3, h4, h5, h6)):first-of-type,
+.sidebar-right > :not(:is(h1, h2, h3, h4, h5, h6)):first-of-type {
+  flex: 2 1 0;
+  min-width: 0;
+}
+
+section.sidebar-right > :not(:is(h1, h2, h3, h4, h5, h6)):last-child,
+.sidebar-right > :not(:is(h1, h2, h3, h4, h5, h6)):last-child {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Quote layout: centered quote with large text */
+section.quote {
+  place-content: center;
+  text-align: center;
+}
+
+section.quote blockquote,
+.quote blockquote {
+  border: none;
+  background: transparent;
+  font-size: 1.5em;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+
+section.quote blockquote p,
+.quote blockquote p {
+  margin: 0.5em 0;
+}
+
+section.quote cite,
+.quote cite {
+  display: block;
+  margin-top: 1em;
+  font-size: 0.7em;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* Grid layout: auto-sizing grid for multiple items */
+section.grid, .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--col-gap, 24px);
+  align-items: start;
+}
+
+section.grid > :is(h1, h2, h3, h4, h5, h6),
+.grid > :is(h1, h2, h3, h4, h5, h6) {
+  grid-column: 1 / -1;
+}
+
+/* Grid variants for specific column counts */
+section.grid-2, .grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--col-gap, 24px);
+  align-items: start;
+}
+
+section.grid-2 > :is(h1, h2, h3, h4, h5, h6),
+.grid-2 > :is(h1, h2, h3, h4, h5, h6) {
+  grid-column: 1 / -1;
+}
+
+section.grid-3, .grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--col-gap, 24px);
+  align-items: start;
+}
+
+section.grid-3 > :is(h1, h2, h3, h4, h5, h6),
+.grid-3 > :is(h1, h2, h3, h4, h5, h6) {
+  grid-column: 1 / -1;
+}
+
+section.grid-4, .grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--col-gap, 24px);
+  align-items: start;
+}
+
+section.grid-4 > :is(h1, h2, h3, h4, h5, h6),
+.grid-4 > :is(h1, h2, h3, h4, h5, h6) {
+  grid-column: 1 / -1;
+}
+
+/* Hero layout: full-screen background with overlay content */
+section.hero {
+  place-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+section.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+section.hero > * {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+section.hero h1,
+section.hero h2 {
+  color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Invert layout: swap foreground and background colors */
+section.invert {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+section.invert h1,
+section.invert h2 {
+  color: var(--bg);
+  border-bottom-color: var(--accent);
+}
+
+section.invert h3,
+section.invert h4,
+section.invert h5,
+section.invert h6 {
+  color: var(--bg);
+}
+
+section.invert a {
+  color: var(--bg);
+}
+
+section.invert code:not(pre code) {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+section.invert blockquote {
+  background: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--accent);
+}
+
 /* ==================== THEME OVERLAYS ==================== */
 
 /* Seafoam Clarity - Fresh aqua-green for tech/wellness */

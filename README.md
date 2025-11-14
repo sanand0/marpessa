@@ -76,8 +76,23 @@ style: |
 
 <div>
 
+**Layouts:**
+
 - [Multi-column with `_class: columns`](#multi-column-with-_class-columns)
 - [Centered slides with `_class: title`](#centered-slides-with-_class-title)
+- [Split layout with `_class: split`](#split-layout-with-_class-split)
+- [Sidebar layout with `_class: sidebar`](#sidebar-layout-with-_class-sidebar)
+- [Quote layout with `_class: quote`](#quote-layout-with-_class-quote)
+- [Grid layouts with `_class: grid`](#grid-layouts-with-_class-grid)
+
+</div>
+
+<div>
+
+**More Layouts:**
+
+- [Hero layout with `_class: hero`](#hero-layout-with-_class-hero)
+- [Invert layout with `_class: invert`](#invert-layout-with-_class-invert)
 - [Smaller fonts with `_class: small`](#smaller-fonts-with-_class-small)
 - [Use `<header>` and `<footer>`](#use-header-and-footer)
 - [Use `<transcript>`](#use-transcript)
@@ -86,17 +101,14 @@ style: |
 
 <div>
 
+**Themes:**
+
 - [Default theme](#default-theme)
 - [Seafoam theme](#seafoam-theme)
 - [Butter theme](#butter-theme)
 - [Clementine theme](#clementine-theme)
 - [Tailwind theme](#tailwind-theme)
 - [Opencolor theme](#opencolor-theme)
-
-</div>
-
-<div>
-
 - [Bootstrap theme](#bootstrap-theme)
 - [Atlassian theme](#atlassian-theme)
 - [Midnight theme](#midnight-theme)
@@ -195,6 +207,164 @@ To center slides vertically (e.g. title slides), use:
 
 # Slide Title
 ```
+
+---
+
+<!-- _class: split -->
+
+# Split layout with `_class: split`
+
+<div>
+
+The split layout creates a 50/50 two-column layout, perfect for image-text combinations.
+
+```markdown
+<!-- _class: split -->
+
+# Slide Title
+
+<div>Left content</div>
+<div>Right content</div>
+```
+
+Works great for showcasing features alongside visuals.
+
+</div>
+
+<div style="background: var(--quote-bg); padding: 20px; border-radius: 8px;">
+
+![h:400px](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Idas_and_Marpessa%2C_A_Book_of_Myths.jpg/500px-Idas_and_Marpessa%2C_A_Book_of_Myths.jpg)
+
+</div>
+
+---
+
+<!-- _class: sidebar -->
+
+# Sidebar layout with `_class: sidebar`
+
+<div style="background: var(--accent); color: white; padding: 20px; border-radius: 8px;">
+
+## Sidebar
+
+This is a narrow sidebar (1/3 width).
+
+Great for:
+
+- Navigation
+- Table of contents
+- Key points
+
+</div>
+
+<div>
+
+The sidebar layout creates a 1/3 + 2/3 layout with a narrow sidebar on the left.
+
+Use `_class: sidebar-right` to flip the layout and place the sidebar on the right.
+
+```markdown
+<!-- _class: sidebar -->
+
+<div>Sidebar content</div>
+<div>Main content</div>
+```
+
+Perfect for showing supplementary information alongside main content.
+
+</div>
+
+---
+
+<!-- _class: quote -->
+
+# Quote layout with `_class: quote`
+
+> The purpose of visualization is insight, not pictures.
+>
+> <cite>— Ben Shneiderman</cite>
+
+Use the quote layout to highlight important quotes or testimonials.
+
+```markdown
+<!-- _class: quote -->
+
+> Your quote here
+>
+> <cite>— Author Name</cite>
+```
+
+---
+
+<!-- _class: grid-3 -->
+
+# Grid layouts with `_class: grid`
+
+<div style="background: var(--heading); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+
+### Feature 1
+
+Automatic grid sizing with `grid`
+
+</div>
+
+<div style="background: var(--accent); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+
+### Feature 2
+
+Fixed grids: `grid-2`, `grid-3`, `grid-4`
+
+</div>
+
+<div style="background: var(--link); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+
+### Feature 3
+
+Perfect for features, team members, or products
+
+</div>
+
+```markdown
+<!-- _class: grid-3 -->
+
+<div>Item 1</div>
+<div>Item 2</div>
+<div>Item 3</div>
+```
+
+---
+
+<!-- _class: hero title -->
+<!-- backgroundImage: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Idas_and_Marpessa%2C_A_Book_of_Myths.jpg/1024px-Idas_and_Marpessa%2C_A_Book_of_Myths.jpg') -->
+
+# Hero layout with `_class: hero`
+
+## Full-screen background images with overlay text
+
+Use the hero layout for impactful title slides
+
+```markdown
+<!-- _class: hero title -->
+<!-- backgroundImage: url('image.jpg') -->
+
+# Your Title
+```
+
+---
+
+<!-- _class: invert -->
+
+# Invert layout with `_class: invert`
+
+The invert layout swaps the foreground and background colors for emphasis sections.
+
+```markdown
+<!-- _class: invert -->
+
+# Dark slide content
+```
+
+Perfect for creating visual breaks or highlighting important sections. Combine with other layouts like `_class: invert split` or `_class: invert quote`.
 
 ---
 
