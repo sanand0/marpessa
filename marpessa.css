@@ -355,6 +355,58 @@ transcript {
   display: none;
 }
 
+/* Column width modifiers - apply to direct children of .columns */
+.col-1 { flex: 1 1 0 !important; }
+.col-2 { flex: 2 1 0 !important; }
+.col-3 { flex: 3 1 0 !important; }
+.col-4 { flex: 4 1 0 !important; }
+.col-5 { flex: 5 1 0 !important; }
+
+/* Grid layout for icon/content grids */
+.grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.grid > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Icon sizing utilities */
+.icon-sm img { width: 48px; height: 48px; }
+.icon-md img { width: 64px; height: 64px; }
+.icon-lg img { width: 96px; height: 96px; }
+
+/* Hero slide with background support */
+section.hero {
+  place-content: center;
+  text-align: center;
+}
+
+section.hero h1 {
+  border-bottom: none;
+  font-size: 3em;
+}
+
+section.hero h2 {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* Font size utilities for increasing font size */
+.large { font-size: 110%; }
+.large-1 { font-size: 125%; }
+.large-2 { font-size: 150%; }
+.large-3 { font-size: 175%; }
+
 /* ==================== THEME OVERLAYS ==================== */
 
 /* Seafoam Clarity - Fresh aqua-green for tech/wellness */

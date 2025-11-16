@@ -81,6 +81,11 @@ style: |
 - [Smaller fonts with `_class: small`](#smaller-fonts-with-_class-small)
 - [Use `<header>` and `<footer>`](#use-header-and-footer)
 - [Use `<transcript>`](#use-transcript)
+- [Column widths](#column-widths)
+- [Font sizing](#font-sizing)
+- [Hero slides](#hero-slides)
+- [Gradient backgrounds](#gradient-backgrounds)
+- [Icon grids](#icon-grids)
 
 </div>
 
@@ -243,6 +248,103 @@ For example, the section below is visible on GitHub not on the slides.
 This transcript will be visible on GitHub, but not on the slides.
 
 </transcript>
+
+---
+
+# Column widths
+
+Use `.col-1` through `.col-5` on column children to control relative widths.
+
+```markdown
+<!-- _class: columns -->
+# Title
+
+<div class="col-1">Narrow sidebar</div>
+<div class="col-2">Wide main content (2x width)</div>
+```
+
+![Column widths example](examples/screenshots/columns-1-2.png)
+
+---
+
+# Font sizing
+
+Apply `.small`, `.small-1`, `.small-2`, `.small-3` to reduce font size, or `.large`, `.large-1`, `.large-2`, `.large-3` to increase it.
+
+```markdown
+<div class="small-2">Smaller text for captions</div>
+<div class="large-1">Larger text for emphasis</div>
+```
+
+![Font sizing example](examples/screenshots/font-size-specific.png)
+
+---
+
+# Hero slides
+
+Use `_class: hero` for centered, impactful title slides with larger headings.
+
+```markdown
+<!-- _class: hero -->
+
+# Welcome to Our Product
+
+## The future starts here
+```
+
+![Hero slide example](examples/screenshots/hero-basic.png)
+
+---
+
+# Gradient backgrounds
+
+Use `<style scoped>` to add gradient backgrounds to slides or elements.
+
+```markdown
+<style scoped>
+section {
+  background: linear-gradient(135deg, var(--heading), var(--accent));
+  color: white;
+}
+h1, h2 { color: white; }
+</style>
+```
+
+![Gradient background example](examples/screenshots/hero-gradient.png)
+
+---
+
+# Gradient on specific elements
+
+Apply gradients to individual elements using inline styles.
+
+```markdown
+<div style="background: linear-gradient(135deg, var(--accent), var(--heading));
+            color: white; padding: 20px; border-radius: 8px;">
+**Feature Highlight**
+Content here
+</div>
+```
+
+![Gradient element example](examples/screenshots/gradient-element.png)
+
+---
+
+# Icon grids
+
+Use `.grid`, `.grid-2`/`.grid-3`/`.grid-4`, and `.icon-sm`/`.icon-md`/`.icon-lg` for icon layouts.
+
+```markdown
+<div class="grid grid-4 icon-lg">
+  <div>
+    ![](icon.svg)
+    Label
+  </div>
+  <!-- more items -->
+</div>
+```
+
+![Icon grid example](examples/screenshots/icon-grid.png)
 
 ---
 
