@@ -216,7 +216,7 @@ To center slides vertically (e.g. title slides), use:
 
 <div>
 
-The split layout creates a 50/50 two-column layout, perfect for image-text combinations.
+The split layout creates a **50/50 two-column layout**.
 
 ```markdown
 <!-- _class: split -->
@@ -227,11 +227,11 @@ The split layout creates a 50/50 two-column layout, perfect for image-text combi
 <div>Right content</div>
 ```
 
-Works great for showcasing features alongside visuals.
+Perfect for image-text combinations.
 
 </div>
 
-<div style="background: var(--quote-bg); padding: 20px; border-radius: 8px;">
+<div>
 
 ![h:400px](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Idas_and_Marpessa%2C_A_Book_of_Myths.jpg/500px-Idas_and_Marpessa%2C_A_Book_of_Myths.jpg)
 
@@ -243,34 +243,29 @@ Works great for showcasing features alongside visuals.
 
 # Sidebar layout with `_class: sidebar`
 
-<div style="background: var(--accent); color: white; padding: 20px; border-radius: 8px;">
+<div>
 
-## Sidebar
+**Quick Links**
 
-This is a narrow sidebar (1/3 width).
-
-Great for:
-
-- Navigation
-- Table of contents
-- Key points
+- [Intro](#1)
+- [Setup](#2)
+- [Usage](#3)
+- [FAQ](#4)
 
 </div>
 
 <div>
 
-The sidebar layout creates a 1/3 + 2/3 layout with a narrow sidebar on the left.
-
-Use `_class: sidebar-right` to flip the layout and place the sidebar on the right.
+The sidebar layout creates a **1/3 + 2/3** split with a narrow sidebar on the left.
 
 ```markdown
 <!-- _class: sidebar -->
 
-<div>Sidebar content</div>
+<div>Sidebar</div>
 <div>Main content</div>
 ```
 
-Perfect for showing supplementary information alongside main content.
+Use `sidebar-right` to flip the layout. Perfect for navigation or table of contents.
 
 </div>
 

@@ -388,14 +388,14 @@ section.sidebar > :is(h1, h2, h3, h4, h5, h6),
   flex: 0 0 100%;
 }
 
-section.sidebar > :not(:is(h1, h2, h3, h4, h5, h6)):first-of-type,
-.sidebar > :not(:is(h1, h2, h3, h4, h5, h6)):first-of-type {
+section.sidebar > div:nth-of-type(1),
+.sidebar > div:nth-of-type(1) {
   flex: 1 1 0;
   min-width: 0;
 }
 
-section.sidebar > :not(:is(h1, h2, h3, h4, h5, h6)):last-child,
-.sidebar > :not(:is(h1, h2, h3, h4, h5, h6)):last-child {
+section.sidebar > div:nth-of-type(2),
+.sidebar > div:nth-of-type(2) {
   flex: 2 1 0;
   min-width: 0;
 }
@@ -413,14 +413,14 @@ section.sidebar-right > :is(h1, h2, h3, h4, h5, h6),
   flex: 0 0 100%;
 }
 
-section.sidebar-right > :not(:is(h1, h2, h3, h4, h5, h6)):first-of-type,
-.sidebar-right > :not(:is(h1, h2, h3, h4, h5, h6)):first-of-type {
+section.sidebar-right > div:nth-of-type(1),
+.sidebar-right > div:nth-of-type(1) {
   flex: 2 1 0;
   min-width: 0;
 }
 
-section.sidebar-right > :not(:is(h1, h2, h3, h4, h5, h6)):last-child,
-.sidebar-right > :not(:is(h1, h2, h3, h4, h5, h6)):last-child {
+section.sidebar-right > div:nth-of-type(2),
+.sidebar-right > div:nth-of-type(2) {
   flex: 1 1 0;
   min-width: 0;
 }
